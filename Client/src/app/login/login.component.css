@@ -1,0 +1,33 @@
+.form_outer_div {
+    margin-top: 5%;
+}
+
+.form_div {
+    width: 22%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    margin: auto;
+    text-align: center;
+    height: 300px;
+    border-radius: 5px;
+}
+
+.inputval {
+    width: 90%;
+    height: 30px;
+}
+
+input {
+    outline: none;
+    border-top: 0px;
+    border-left: 0ch;
+    border-right: 0ch;
+    border-bottom: 1px black solid;
+    background: none;
+}
+
+button {
+    height: 30px;
+    width: 100px;
+}

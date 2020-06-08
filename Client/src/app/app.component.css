@@ -1,0 +1,62 @@
+#navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: rgb(0, 3, 8);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.reg_ls {
+    float: right;
+}
+
+.log_ls {
+    float: right;
+    margin-right: 20px;
+}
+
+.log_btn {
+    background-color: rgb(206, 105, 105);
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.reg_btn {
+    background-color: rgb(206, 156, 156);
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+
+
+/* header {
+    height: 50px;
+    flex-shrink: 0;
+    /* /* background-color: #037cf5; 
+ } */
+
+header {
+    width: 100%;
+    position: fixed;
+    padding: 0 0;
+}
+
+header {
+    top: 0;
+}
+
+h1 {
+    margin-top: 5%;
+    text-align: center;
+}

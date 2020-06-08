@@ -1,0 +1,89 @@
+<div id="outer_div">
+
+    <form *ngIf="!showForm" [formGroup]="regForm">
+        <div id="form_div">
+            <div class="form-group">
+                <h2>Register Form</h2>
+            </div>
+            <br />
+            <div class="form-group">
+                <label>Full Name:</label><br />
+                <input class="form-control" formControlName="firstName" type="text"><br>
+                <span *ngIf="regForm.controls.firstName.errors" class="alert
+                    alert-danger">This field is required!</span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label>Mobile:</label><br />
+                <input class="form-control" formControlName="mobile" type="number"><br>
+                <span *ngIf="regForm.controls.mobile.errors" class="alert
+                    alert-danger">This field is required!</span>
+            </div>
+            <br />
+            <div form-group>
+                <label>Email:</label><br />
+                <input class="form-control" formControlName="email" type="email"><br>
+                <span *ngIf="regForm.controls.email.errors" class="alert
+                    alert-danger">This field is required!</span>
+            </div>
+            <br />
+
+            <div class="form-group">
+                <label>Upload Id:</label>
+                <input aria-label="File browser example" #file id="file" class="inputfile" formControlName="uFile" (change)="preview(file.files)" type="file">
+
+                <br />
+                <span style="color:red;" *ngIf="message">{{message}}</span>
+            </div>
+            <div>
+                <img [src]="imgURL" height="150" *ngIf="imgURL">
+            </div><br />
+            <div class="form-group">
+                <label>Registration Type:</label>&nbsp;&nbsp;
+                <select formControlName="regType" [(ngModel)]="reg1">
+                    <option *ngFor="let reg of regType"
+                        [ngValue]="reg">{{reg}}</option>
+                </select>
+            </div>
+            <br />
+            <div class="form-group">
+                <label>No OF Ticket:</label>
+                <input style="margin: auto; text-align: center;" height="200" class="form-control" formControlName="noOfTicket" type="number"><br />
+
+            </div>
+            <br /><br />
+            <div>
+                <button class="btn btn-primary" type="submit" (click)="submit()" [disabled]="!regForm.valid">Preview</button> &nbsp;&nbsp;
+                <!-- <a [routerLink]="['/login']">Login</a> -->
+            </div>
+            <br />
+        </div>
+    </form>
+
+    <div style="margin: auto; text-align: center; height: 28px; width:
+        fit-content; background-color: rgb(78, 115, 170);" *ngIf="isSubmit">
+
+        <p style="font-size: 24px; font-family: Arial, Helvetica,
+            sans-serif; color: rgb(245, 244, 244);">Rgistration Successful Your Id is: <span style="font-size: 24px; font-family: Arial, Helvetica,
+                sans-serif;color: brown;font-weight: bold;">{{uid}}</span>
+        </p>
+
+    </div>
+
+    <div class="preview-div" *ngIf="showPreview">
+        <p>{{regForm.value.firstName}}</p>
+        <p>{{regForm.value.mobile}}</p>
+        <p>{{regForm.value.email}}</p>
+        <p>{{regForm.value.regType}}</p>
+        <p>{{regForm.value.noOfTicket}}</p>
+        <img style="margin: auto;" height="200" src="{{imgURL}}" alt="img" />
+        <div>
+            <button type="submit" (click)="addData()">Submit</button>
+            <!-- <a [routerLink]="['/register']">Back</a> -->
+        </div>
+
+    </div>
+
+
+
+</div>
